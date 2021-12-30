@@ -8,4 +8,5 @@ Task 2 - evolution algorithm - write evolution algorithm that finds a local mini
 https://www.indusmic.com/post/bird-function  
 Task 3 - Tic Tac Toe mini-max algorithm - write mini max algorithm with alpha-beta cutting that will play Tic Tac Toe  
 Task 4 - Naive Bayesian Classifier - write Naive Bayesian classifier that will predict wine  classes. Use dataset from link below:  
-https://archive.ics.uci.edu/ml/datasets/Wine+Quality
+https://archive.ics.uci.edu/ml/datasets/Wine+Quality  
+Task 5 - Neural Network - implement Neural Network with single hidden layer - draft done in cooperation with @ianczyko  
