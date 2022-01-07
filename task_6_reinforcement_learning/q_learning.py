@@ -49,6 +49,11 @@ class QLearningModel:
             (self._rows_num, self._colums_num), self._obstacle_reward
         )
 
+        # initialize lists to collect data about learing / training process
+        # after each episode
+        self._step_stats = []
+        self._rewards_stats = []
+
     def init_map(
         self,
         environment: str,
@@ -167,11 +172,6 @@ class QLearningModel:
         param eposiodes: represents the number of episodes
         type eposiodes: int
         """
-        # initialize lists to collect data about learing / training process
-        # after each episode
-        self.steps = []
-        self.rewards = []
-
         # iterate over given number of eposiodes
         for _ in range(episodes):
             curr_row, curr_column = self.get_start_location()
@@ -210,8 +210,8 @@ class QLearningModel:
                 epsiode_total_steps += 1
 
             # collect data about episode
-            self.steps.append(epsiode_total_steps)
-            self.rewards.append(epsiode_total_reward)
+            self._step_stats.append(epsiode_total_steps)
+            self._rewards_stats.append(epsiode_total_reward)
 
     def get_shortest_path(self, row_num, column_num):
         """
@@ -238,3 +238,15 @@ class QLearningModel:
             path.append((row_num, column_num))  # save data
 
         return path
+
+    def get_steps_stats(self):
+        """
+        Getter for step_stats attribute.
+        """
+        return self._step_stats
+
+    def get_rewards_stats(self):
+        """
+        Getter for rewards_stats attribute.
+        """
+        return self._rewards_stats
