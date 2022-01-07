@@ -10,3 +10,4 @@ Task 3 - Tic Tac Toe mini-max algorithm - write mini max algorithm with alpha-be
 Task 4 - Naive Bayesian Classifier - write Naive Bayesian classifier that will predict wine  classes. Use dataset from link below:  
 https://archive.ics.uci.edu/ml/datasets/Wine+Quality  
 Task 5 - Neural Network - implement Neural Network with single hidden layer - draft done in cooperation with @ianczyko  
+Task 6 - Reinforcement learnin - implement Q-learing algorithm that will allow agent to learn to move around given labirynt and achieve goal / finish field  
