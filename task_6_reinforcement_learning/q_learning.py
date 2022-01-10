@@ -2,7 +2,14 @@ import numpy as np
 
 
 class QLearningModel:
-    def __init__(self, rows_num: int, columns_num: int):
+    def __init__(
+        self,
+        rows_num: int,
+        columns_num: int,
+        epsilon: float = 0.9,
+        lr: float = 0.9,
+        df: float = 0.9
+    ):
         """
         Constructor for class QLearningModel.
 
@@ -13,21 +20,30 @@ class QLearningModel:
         param columns_num: represents the number of columns of the agent's
             environment
         type columns_num: int
+
+        param epsilon: represents epsilon parameter needed for epsilon-greedy algorithm
+        type epsilon: float
+
+        param lr: represents learning rate
+        type lr: float
+
+        param df: represents discount factor needed in learning process
+        type df: float
         """
         # add 2 additional rows and columns to create boarders around the
         # environment to prevent the agent from going outside the environment
         self._rows_num = rows_num + 2
         self._colums_num = columns_num + 2
 
+        # set up values for learinin process
+        self._epsilon = epsilon     # probability of choosing best action
+        self._lr = lr               # learning rate
+        self._df = df               # discount factor
+
         # set up rewards / penalties
         self._obstacle_reward = -100
         self._goal_reward = 100
         self._path_reward = -1
-
-        # set up values for learinin process
-        self._epsilon = 0.9     # probability of choosing best action
-        self._lr = 0.9          # learning rate
-        self._df = 0.9          # discount factor
 
         # set up agent's actions - environment is a 2D board using urban
         # metrics
