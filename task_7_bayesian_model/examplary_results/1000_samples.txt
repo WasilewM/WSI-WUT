@@ -1,0 +1,80 @@
+[bnlearn] >bayes DAG created.
+CPD of voltage_change:
++---------------------+-------+
+| voltage_change(0.0) | 0.736 |
++---------------------+-------+
+| voltage_change(1.0) | 0.264 |
++---------------------+-------+
+CPD of drive_failure:
++--------------------+---------------------+---------------------+---------------------+---------------------+
+| flooding           | flooding(0.0)       | flooding(0.0)       | flooding(1.0)       | flooding(1.0)       |
++--------------------+---------------------+---------------------+---------------------+---------------------+
+| voltage_change     | voltage_change(0.0) | voltage_change(1.0) | voltage_change(0.0) | voltage_change(1.0) |
++--------------------+---------------------+---------------------+---------------------+---------------------+
+| drive_failure(0.0) | 0.8629707112970711  | 0.5220588235294118  | 0.3875968992248062  | 0.48828125          |
++--------------------+---------------------+---------------------+---------------------+---------------------+
+| drive_failure(1.0) | 0.13702928870292888 | 0.47794117647058826 | 0.6124031007751938  | 0.51171875          |
++--------------------+---------------------+---------------------+---------------------+---------------------+
+CPD of flooding:
++---------------+-------+
+| flooding(0.0) | 0.614 |
++---------------+-------+
+| flooding(1.0) | 0.386 |
++---------------+-------+
+CPD of data_loss:
++------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+| computer_failure | computer_failure(0.0) | computer_failure(0.0) | computer_failure(1.0) | computer_failure(1.0) |
++------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+| drive_failure    | drive_failure(0.0)    | drive_failure(1.0)    | drive_failure(0.0)    | drive_failure(1.0)    |
++------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+| data_loss(0.0)   | 0.8693415637860082    | 0.3462414578587699    | 0.5625                | 0.4646840148698885    |
++------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+| data_loss(1.0)   | 0.13065843621399176   | 0.6537585421412301    | 0.4375                | 0.5353159851301115    |
++------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+CPD of computer_failure:
++-----------------------+--------+
+| computer_failure(0.0) | 0.7055 |
++-----------------------+--------+
+| computer_failure(1.0) | 0.2945 |
++-----------------------+--------+
+[bnlearn] >Independencies:
+(voltage_change ⟂ computer_failure, flooding)
+(voltage_change ⟂ data_loss, computer_failure | drive_failure)
+(voltage_change ⟂ flooding | computer_failure)
+(voltage_change ⟂ computer_failure | flooding)
+(voltage_change ⟂ computer_failure | data_loss, drive_failure)
+(voltage_change ⟂ data_loss | drive_failure, computer_failure)
+(voltage_change ⟂ data_loss, computer_failure | drive_failure, flooding)
+(voltage_change ⟂ computer_failure | data_loss, drive_failure, flooding)
+(voltage_change ⟂ data_loss | drive_failure, computer_failure, flooding)
+(computer_failure ⟂ voltage_change, drive_failure, flooding)
+(computer_failure ⟂ drive_failure, flooding | voltage_change)
+(computer_failure ⟂ voltage_change, flooding | drive_failure)
+(computer_failure ⟂ voltage_change, drive_failure | flooding)
+(computer_failure ⟂ flooding | voltage_change, drive_failure)
+(computer_failure ⟂ drive_failure | voltage_change, flooding)
+(computer_failure ⟂ voltage_change, flooding | data_loss, drive_failure)
+(computer_failure ⟂ voltage_change | drive_failure, flooding)
+(computer_failure ⟂ flooding | voltage_change, data_loss, drive_failure)
+(computer_failure ⟂ voltage_change | data_loss, drive_failure, flooding)
+(flooding ⟂ voltage_change, computer_failure)
+(flooding ⟂ computer_failure | voltage_change)
+(flooding ⟂ data_loss, computer_failure | drive_failure)
+(flooding ⟂ voltage_change | computer_failure)
+(flooding ⟂ data_loss, computer_failure | voltage_change, drive_failure)
+(flooding ⟂ computer_failure | data_loss, drive_failure)
+(flooding ⟂ data_loss | drive_failure, computer_failure)
+(flooding ⟂ computer_failure | voltage_change, data_loss, drive_failure)
+(flooding ⟂ data_loss | voltage_change, drive_failure, computer_failure)
+(data_loss ⟂ voltage_change, flooding | drive_failure)
+(data_loss ⟂ flooding | voltage_change, drive_failure)
+(data_loss ⟂ voltage_change, flooding | drive_failure, computer_failure)
+(data_loss ⟂ voltage_change | drive_failure, flooding)
+(data_loss ⟂ flooding | voltage_change, drive_failure, computer_failure)
+(data_loss ⟂ voltage_change | drive_failure, computer_failure, flooding)
+(drive_failure ⟂ computer_failure)
+(drive_failure ⟂ computer_failure | voltage_change)
+(drive_failure ⟂ computer_failure | flooding)
+(drive_failure ⟂ computer_failure | voltage_change, flooding)
+[bnlearn] >Nodes: ['voltage_change', 'drive_failure', 'flooding', 'data_loss', 'computer_failure']
+[bnlearn] >Edges: [('voltage_change', 'drive_failure'), ('drive_failure', 'data_loss'), ('flooding', 'drive_failure'), ('computer_failure', 'data_loss')]
