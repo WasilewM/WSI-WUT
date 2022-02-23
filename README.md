@@ -11,3 +11,4 @@ Task 4 - Naive Bayesian Classifier - write Naive Bayesian classifier that will p
 https://archive.ics.uci.edu/ml/datasets/Wine+Quality  
 Task 5 - Neural Network - implement Neural Network with single hidden layer - draft done in cooperation with @ianczyko  
 Task 6 - Reinforcement learning - implement Q-learing algorithm that will allow agent to learn to move around given labirynt and achieve goal / finish field  
+Task 7 - Bayesian Models - implement bayesina network generator that will produce "random" samples consistent with conditional probabilities distribution  
