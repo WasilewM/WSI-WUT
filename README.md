@@ -1,4 +1,4 @@
-# AI-Introduction-WUT  
+# WSI-WUT  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Code in this repository was written during Introduction to Artificial Intelligence course of my computer science studies at WUT.  
 In this repository I only upload finished code, due to the fact that I do work with the gitlab repository of the Faculty of Electronics and Information Technology on a daily   basis.  
